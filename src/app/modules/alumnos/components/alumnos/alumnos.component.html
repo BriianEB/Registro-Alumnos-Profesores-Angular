@@ -1,0 +1,32 @@
+<div class="alumnos-section" *ngIf="alumnos">
+    <h2>Lista de alumnos</h2>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Correo electrónico</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alumno of alumnos">
+                <td>{{ alumno.Matricula }}</td>
+                <td>{{ alumno.Nombre }}</td>
+                <td>{{ alumno.Carrera }}</td>
+                <td>{{ alumno.Email }}</td>
+                <td>{{ alumno.Telefono }}</td>
+                <td>
+                    <a routerLink="/alumnos/{{ alumno.Matricula }}">Ver detalles</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"><span>Total de registros: {{ numAlumnos }}</span> </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

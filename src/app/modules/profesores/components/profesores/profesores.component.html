@@ -1,0 +1,30 @@
+<div class="profesores-section" *ngIf="profesores">
+    <h2>Lista de profesores</h2>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>No. de Empleado</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let profesor of profesores">
+                <td>{{ profesor.NoEmpleado }}</td>
+                <td>{{ profesor.Nombre }}</td>
+                <td>{{ profesor.Carrera }}</td>
+                <td>{{ profesor.Telefono }}</td>
+                <td>
+                    <a routerLink="/profesores/{{ profesor.NoEmpleado }}">Ver detalles</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5"><span>Total de registros: {{ numProfesores }}</span></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

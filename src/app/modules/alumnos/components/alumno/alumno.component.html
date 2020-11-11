@@ -1,0 +1,27 @@
+<div class="alumnos-section" *ngIf="alumno">
+    <h2>Detalles del alumno</h2>
+    <table class="tabla-detalles">
+        <thead>
+            <tr>
+                <th>Detalles del alumno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ alumno.Matricula }}</td>
+            </tr>
+            <tr>
+                <td>{{ alumno.Nombre }}</td>
+            </tr>
+            <tr>
+                <td>{{ alumno.Carrera }}</td>
+            </tr>
+            <tr>
+                <td>{{ alumno.Email }}</td>
+            </tr>
+            <tr>
+                <td>{{ alumno.Telefono }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

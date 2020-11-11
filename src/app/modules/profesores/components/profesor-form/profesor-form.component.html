@@ -1,0 +1,36 @@
+<div class="form-container" *ngIf="profesor">
+    <h2>Agregar nuevo profesor</h2>
+    <form [formGroup]="profesorForm" (ngSubmit)="create()">
+        <div class="form-group">
+            <label>Número de empleado</label>
+            <input class="form-control" formControlName="noEmpleado">
+            <span *ngIf="profesorForm.get('noEmpleado').touched && profesorForm.get('noEmpleado').invalid">
+                Debes ingresar el número de empleado
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input class="form-control" formControlName="nombre">
+            <span *ngIf="profesorForm.get('nombre').touched && profesorForm.get('nombre').invalid">
+                Debes ingresar el nombre
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Carrera</label>
+            <input class="form-control" formControlName="carrera">
+            <span *ngIf="profesorForm.get('carrera').touched && profesorForm.get('carrera').invalid">
+                Debes ingresar la carrera
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input class="form-control" formControlName="telefono">
+            <span *ngIf="profesorForm.get('telefono').touched && profesorForm.get('telefono').invalid">
+                Debes ingresar el teléfono
+            </span>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="boton" [disabled]="profesorForm.invalid">Guardar</button>
+        </div>
+    </form>
+</div>

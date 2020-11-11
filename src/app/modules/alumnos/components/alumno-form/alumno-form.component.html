@@ -1,0 +1,43 @@
+<div class="form-container" *ngIf="alumno">
+    <h2>Agregar nuevo alumno</h2>
+    <form [formGroup]="alumnoForm" (ngSubmit)="create()">
+        <div class="form-group">
+            <label>Matrícula</label>
+            <input class="form-control" formControlName="matricula">
+            <span *ngIf="alumnoForm.get('matricula').touched && alumnoForm.get('matricula').invalid">
+                Debes ingresar la matrícula
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input class="form-control" formControlName="nombre">
+            <span *ngIf="alumnoForm.get('nombre').touched && alumnoForm.get('nombre').invalid">
+                Debes ingresar el nombre
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Carrera</label>
+            <input class="form-control" formControlName="carrera">
+            <span *ngIf="alumnoForm.get('carrera').touched && alumnoForm.get('carrera').invalid">
+                Debes ingresar la carrera
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Correo electrónico</label>
+            <input class="form-control" formControlName="email">
+            <span *ngIf="alumnoForm.get('email').touched && alumnoForm.get('email').invalid">
+                Debes ingresar el correo electrónico
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input class="form-control" formControlName="telefono">
+            <span *ngIf="alumnoForm.get('telefono').touched && alumnoForm.get('telefono').invalid">
+                Debes ingresar el teléfono
+            </span>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="boton" [disabled]="alumnoForm.invalid">Guardar</button>
+        </div>
+    </form>
+</div>
